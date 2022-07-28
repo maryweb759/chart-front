@@ -1,0 +1,38 @@
+<p>time-picker works!</p>
+<mat-card style="border-radius: 0px; box-shadow: 1px 1px 5px #ccc;">
+    <div class="innerbox" style="padding: 16px;">
+
+    <div class="row">        
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field style="width: 100%;">
+                        <input (dateChange)="onDateSelected()" [max]="dateFilter.endDate" matInput
+                            [matDatepicker]="startPicker" [(ngModel)]="dateFilter.startDate"
+                            placeholder="Start Date">
+                        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #startPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field style="width: 100%;">
+                        <input (dateChange)="onDateSelected()" [min]="dateFilter.startDate" matInput
+                            [matDatepicker]="endPicker" [(ngModel)]="dateFilter.endDate" placeholder="End Date">
+                        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #endPicker></mat-datepicker>
+                        <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+
+                    </mat-form-field>
+                </div> 
+                <mat-form-field>
+                    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date & time" [(ngModel)]="myDatePicker">
+                    
+                    <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+
+</mat-card> 
